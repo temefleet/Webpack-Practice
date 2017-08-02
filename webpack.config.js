@@ -23,5 +23,12 @@ module.exports = {
         ]
       }
     ]
+  },
+  devServer: {
+    inline: true,
+    watchOptions: {
+      aggregateTimeout: 300,
+      poll: 1000
+    }
   }
 }
