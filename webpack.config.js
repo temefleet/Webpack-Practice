@@ -1,5 +1,6 @@
 module.exports = {
   entry: "./scripts/script1.js",
+  devtool: "inline-source-map",
   output: {
     filename: "src/bundle.js"
   },
@@ -12,7 +13,12 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [{ loader: "style-loader" },
-              { loader: "css-loader" },
+              { 
+                loader: "css-loader",
+                options: {
+                  sourceMap: true
+                } 
+              },
               { loader: "sass-loader" }
         ]
       }
